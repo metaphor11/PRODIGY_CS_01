@@ -1,38 +1,92 @@
-The code provided is a Python script that implements a simple Caesar cipher for encrypting and decrypting messages. The Caesar cipher is a type of substitution cipher where each letter in the plaintext is shifted a certain number of places down or up the alphabet.
+```markdown
+# Caesar Cipher Encryption and Decryption Tool
 
-Here’s a detailed explanation of each part of the code:
+This is a simple Python program that allows users to encrypt and decrypt messages using the Caesar cipher technique. The Caesar cipher is a type of substitution cipher where each letter in the plaintext is shifted a certain number of places down or up the alphabet.
 
-Caesar Cipher Functions
-1. `caesar_cipher_encrypt(text, shift)`:
-    - This function takes a string `text` and an integer `shift` as input.
-    - It initializes an empty list `encrypted_text` to store the encrypted characters.
-    - It iterates through each character in `text`.
-    - If the character is a letter (`char.isalpha()`), it shifts the character by the `shift` value:
-        - For lowercase letters, it checks if the shifted character goes beyond 'z' or before 'a' and adjusts accordingly.
-        - For uppercase letters, it checks if the shifted character goes beyond 'Z' or before 'A' and adjusts accordingly.
-    - Non-alphabetic characters are appended to `encrypted_text` without change.
-    - The function returns the encrypted message as a single string by joining the list `encrypted_text`.
+## Features
 
-2. `caesar_cipher_decrypt(text, shift)`:
-    - This function decrypts a message by calling the `caesar_cipher_encrypt` function with the `shift` value negated (`-shift`). 
-    - This effectively reverses the encryption.
+- Encrypt messages by shifting characters by a specified number of positions.
+- Decrypt messages by reversing the shift.
+- Simple user interface through the command line.
 
-User Interaction Functions
-1. `encrypt_message()`:
-    - This function prompts the user to input a message to encrypt and the shift value.
-    - It calls `caesar_cipher_encrypt` with these inputs and prints the encrypted message.
+## Requirements
 
-2. `decrypt_message()`:
-    - This function prompts the user to input a message to decrypt and the shift value.
-    - It calls `caesar_cipher_decrypt` with these inputs and prints the decrypted message.
+- Python 3.x
 
-Main Menu Function
-1. `main()`:
-    - This function provides a menu for the user to choose between encrypting a message, decrypting a message, or exiting the program.
-    - It runs in a loop until the user chooses to exit (option '3').
-    - It calls the appropriate function based on the user’s choice and handles invalid input by prompting the user to select a valid option.
+## Usage
 
-Program Entry Point
-- The `if __name__ == "__main__": main()` block ensures that the `main` function is called when the script is executed directly. This starts the program and presents the user with the menu.
+1. Clone the repository:
 
-Overall, this script is a user-interactive program that allows users to encrypt and decrypt messages using the Caesar cipher, providing a simple interface to input messages and shift values and to see the results of the encryption or decryption.
+```sh
+git clone https://github.com/metaphor11/caesar-cipher-tool.git
+cd caesar-cipher-tool
+```
+
+2. Run the script:
+
+```sh
+python caesar_cipher.py
+```
+
+3. Follow the on-screen instructions:
+
+- To encrypt a message, select option `1`:
+  - Enter the message you want to encrypt.
+  - Enter the shift value (a positive integer).
+  - The encrypted message will be displayed.
+
+- To decrypt a message, select option `2`:
+  - Enter the message you want to decrypt.
+  - Enter the shift value (a positive integer).
+  - The decrypted message will be displayed.
+
+- To exit the program, select option `3`.
+
+## Example
+
+Encrypt a message:
+
+```sh
+Enter the message you want to encrypt: Hello, World!
+Enter the shift value (positive integer): 3
+Encrypted Message: Khoor, Zruog!
+```
+
+Decrypt a message:
+
+```sh
+Enter the message you want to decrypt: Khoor, Zruog!
+Enter the shift value (positive integer): 3
+Decrypted Message: Hello, World!
+```
+
+## Code Explanation
+
+### `caesar_cipher_encrypt(text, shift)`
+
+This function encrypts the input text by shifting each alphabetic character by the specified shift value. Non-alphabetic characters remain unchanged.
+
+### `caesar_cipher_decrypt(text, shift)`
+
+This function decrypts the input text by calling `caesar_cipher_encrypt` with the negative of the shift value, effectively reversing the encryption.
+
+### `encrypt_message()`
+
+Prompts the user to input a message and a shift value, then displays the encrypted message.
+
+### `decrypt_message()`
+
+Prompts the user to input a message and a shift value, then displays the decrypted message.
+
+### `main()`
+
+Provides a menu for the user to choose between encrypting a message, decrypting a message, or exiting the program.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes or improvements.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+```
