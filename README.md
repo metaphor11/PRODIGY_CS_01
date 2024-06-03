@@ -1,4 +1,3 @@
-```markdown
 # Caesar Cipher Encryption and Decryption Tool
 
 This is a simple Python program that allows users to encrypt and decrypt messages using the Caesar cipher technique. The Caesar cipher is a type of substitution cipher where each letter in the plaintext is shifted a certain number of places down or up the alphabet.
